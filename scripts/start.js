@@ -8,8 +8,8 @@ require("babel-core/register")({
 });
 require("babel-polyfill");
 
-var app = require('../src/app');
-var http = require('http');
+const app = require('../src/app');
+const http = require('http');
 // var port = normalizePort(process.env.PORT || '4000');
-var server = http.createServer(app.callback());
+const server = http.createServer(app.callback());
 server.listen('4000');
