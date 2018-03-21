@@ -1,12 +1,12 @@
 import Koa from 'koa'
 import json from 'koa-json'
-import bodyparser from 'koa-bodyparser'
+import BodyParser from 'koa-bodyparser'
 import router from './routes'
 import logger from 'koa-logger'
 
 const app = new Koa()
 // middlewares
-app.use(bodyparser({
+app.use(BodyParser({
     enableTypes: ['json', 'form', 'text']
 }))
 app.use(json())
