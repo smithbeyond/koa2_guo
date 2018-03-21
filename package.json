@@ -1,0 +1,33 @@
+{
+  "name": "koa2_guo",
+  "version": "1.0.0",
+  "description": "This is a node.js backend project by koa2 drivering.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "test": "node scripts/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smithbeyond/koa2_guo.git"
+  },
+  "author": "yin_ge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smithbeyond/koa2_guo/issues"
+  },
+  "homepage": "https://github.com/smithbeyond/koa2_guo#readme",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
