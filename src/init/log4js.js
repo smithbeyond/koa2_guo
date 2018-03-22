@@ -1,9 +1,9 @@
-import { configure, getLogger } from 'log4js';
-const logger = getLogger();
-logger.level = 'debug';
-logger.debug("Some debug messages");
+import log4js from 'koa-log4';
 
-configure({
-	appenders: { cheese: { type: 'file', filename: 'cheese.log' } },
-	categories: { default: { appenders: ['cheese'], level: 'error' } }
-});
+export function GetAccessLogger(fileName) {
+    log4js.configure({
+        appenders: { access: { type: 'DateFile', filename: fileName || 'access.log', pattern: '-yyyy-MM-dd.log', alwaysIncludePattern: true } },
+        categories: { default: { appenders: ['access'], level: log4js.levels.INFO } }
+      });
+    return log4js.koaLogger(log4js.getLogger('access'))
+}

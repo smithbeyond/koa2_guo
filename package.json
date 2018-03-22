@@ -6,9 +6,9 @@
   "scripts": {
     "start": "pm2 start scripts/start.js --watch",
     "restart": "pm2 restart scripts/start.js --watch",
-    "stop": "pm2 stop scripts/start.js --watch",
+    "stop": "pm2 stop scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "pm2 start scripts/test.js --watch"
+    "test": "node scripts/start.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,8 @@
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
-    "koa-logger": "^3.2.0",
+    "koa-log4": "^2.3.0",
     "koa-router": "^7.4.0",
-    "log4js": "^2.5.3",
     "pm2": "^2.10.1"
   },
   "devDependencies": {

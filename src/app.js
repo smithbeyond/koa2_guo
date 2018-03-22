@@ -2,27 +2,29 @@ import Koa from 'koa'
 import json from 'koa-json'
 import BodyParser from 'koa-bodyparser'
 import router from './routes'
-import logger from 'koa-logger'
-import { log4js } from './init/log4js'
+import { GetAccessLogger } from './init/log4js'
 
+// 1. make server
 const app = new Koa()
+
 // middlewares
+// 2. 设置接口支持json格式数据
 app.use(BodyParser({
     enableTypes: ['json', 'form', 'text']
 }))
+// 2. 使用json
 app.use(json())
-app.use(logger())
+// 3. 初始化日志
+const accessLogger = GetAccessLogger('log/access/access.log')
+app.use(accessLogger)
 
-// logger
+// 4. 设置可跨域调用
 app.use(async(ctx, next) => {
     ctx.set("Access-Control-Allow-Origin", "*")
-    const start = new Date()
     await next()
-    const ms = new Date() - start
-    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
-// routes
+// 5. 设置routes
 app.use(router.routes(), router.allowedMethods())
 
 module.exports = app
