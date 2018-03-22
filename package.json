@@ -4,9 +4,11 @@
   "description": "This is a node.js backend project by koa2 drivering.",
   "main": "app.js",
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "pm2 start scripts/start.js --watch",
+    "restart": "pm2 restart scripts/start.js --watch",
+    "stop": "pm2 stop scripts/start.js --watch",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "pm2 start scripts/test.js --watch"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,9 @@
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "log4js": "^2.5.3",
+    "pm2": "^2.10.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

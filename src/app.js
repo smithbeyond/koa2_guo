@@ -3,6 +3,7 @@ import json from 'koa-json'
 import BodyParser from 'koa-bodyparser'
 import router from './routes'
 import logger from 'koa-logger'
+import { log4js } from './init/log4js'
 
 const app = new Koa()
 // middlewares
