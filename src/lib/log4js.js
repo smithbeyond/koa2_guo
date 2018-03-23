@@ -40,10 +40,14 @@ configure({
 export const logger = getLogger('app')
 
 
+let accessLogger
 /**
  * GetAccessLogger 获取access日志管理器
  * @param {string} fileName 
  */
 export function GetAccessLogger() {
-    return koaLogger(getLogger('access'))
+    if (!accessLogger) {
+        accessLogger = koaLogger(getLogger('access'))
+    }
+    return accessLogger
 }

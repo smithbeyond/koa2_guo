@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import { login, logout } from './api/login'
+import { Login, Logout } from './api/login'
 import { QueryUser } from './api/user'
 
 
@@ -8,8 +8,8 @@ router.prefix('/backend/api')
 
 
 // 登陆相关
-router.get('/login', login)
-router.get('/logout', logout)
+router.get('/login', Login)
+router.get('/logout', Logout)
 // 用户信息相关
 router.get('/user/query', QueryUser)
 

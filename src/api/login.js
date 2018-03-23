@@ -1,7 +1,7 @@
 import { logger } from '../lib/log4js'
 
 //  登陆接口
-export async function login(ctx) {
+export async function Login(ctx) {
     const { name } = ctx.query
     ctx.body = 'hello ' + name
     logger.debug('login func log debug')
@@ -10,7 +10,7 @@ export async function login(ctx) {
 }
 
 // 用户退出接口
-export async function logout(ctx) {
+export async function Logout(ctx) {
     const { name } = ctx.query
     ctx.body = name + ' exist!!'
 }
