@@ -25,7 +25,9 @@
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
     "koa-log4": "^2.3.0",
+    "koa-mysql-session": "0.0.2",
     "koa-router": "^7.4.0",
+    "koa-session-minimal": "^3.0.4",
     "pm2": "^2.10.1"
   },
   "devDependencies": {
